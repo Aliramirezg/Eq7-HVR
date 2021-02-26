@@ -1,1 +1,16 @@
-##Hola 
+# Solo ejecuta este comando si no has instalado la librería HRV analysis
+!pip install pyHRV
+!pip install biosppy
+
+# Solo ejecuta estos comandos si nunca has instalado GCloud
+# Autenticar usario de google, instalar e iniciar GCloud
+from google.colab import auth
+auth.authenticate_user()
+
+# Instalar el SDK de GCloud
+!curl https://sdk.cloud.google.com | bash
+
+# Iniciar GCloud
+!gcloud init
+# Copiar base de datos de Physionet
+!gsutil -m cp -r gs://ecg-spider-clip-1.0.0.physionet.org .
